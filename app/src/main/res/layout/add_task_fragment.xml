@@ -27,5 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Task"
-        android:id="@+id/addB" />
+        android:id="@+id/addB"
+        android:background="#46241d"
+        android:textColor="#eceaea"/>
 </LinearLayout>
