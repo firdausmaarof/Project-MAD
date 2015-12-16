@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +59,6 @@ public class ViewTaskFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
         id = bundle.getString("ID");
-        idET.setText(id);
 
         getTask();
 
@@ -113,38 +113,45 @@ public class ViewTaskFragment extends Fragment {
         final String task = taskET.getText().toString().trim();
         final String description = descriptionET.getText().toString().trim();
 
-        class UpdateTask extends AsyncTask<Void,Void,String>{
-            ProgressDialog loading;
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                loading = ProgressDialog.show(getActivity(),"Updating...","Wait...",false,false);
+        if (TextUtils.isEmpty(task) || TextUtils.isEmpty(description)){
+            Toast.makeText(getActivity(), "Please fill all the values", Toast.LENGTH_LONG).show();
+        }
+        else {
+            class UpdateTask extends AsyncTask<Void,Void,String>{
+                ProgressDialog loading;
+                @Override
+                protected void onPreExecute() {
+                    super.onPreExecute();
+                    loading = ProgressDialog.show(getActivity(),"Updating...","Wait...",false,false);
+                }
+
+                @Override
+                protected void onPostExecute(String s) {
+                    super.onPostExecute(s);
+                    loading.dismiss();
+                    Toast.makeText(getActivity(), s, Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                protected String doInBackground(Void... params) {
+                    HashMap<String,String> hashMap = new HashMap<>();
+                    hashMap.put(Config.KEY_TODO_ID,id);
+                    hashMap.put(Config.KEY_TODO_TASK,task);
+                    hashMap.put(Config.KEY_TODO_DESCRIPTION,description);
+
+                    RequestHandler rh = new RequestHandler();
+
+                    String s = rh.sendPostRequest(Config.URL_UPDATE_EMP,hashMap);
+
+                    return s;
+                }
             }
 
-            @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
-                loading.dismiss();
-                Toast.makeText(getActivity(), s, Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            protected String doInBackground(Void... params) {
-                HashMap<String,String> hashMap = new HashMap<>();
-                hashMap.put(Config.KEY_TODO_ID,id);
-                hashMap.put(Config.KEY_TODO_TASK,task);
-                hashMap.put(Config.KEY_TODO_DESCRIPTION,description);
-
-                RequestHandler rh = new RequestHandler();
-
-                String s = rh.sendPostRequest(Config.URL_UPDATE_EMP,hashMap);
-
-                return s;
-            }
+            UpdateTask ut = new UpdateTask();
+            ut.execute();
         }
 
-        UpdateTask ut = new UpdateTask();
-        ut.execute();
+
     }
 
     private void deleteTask(){

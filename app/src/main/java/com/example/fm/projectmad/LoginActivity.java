@@ -3,6 +3,7 @@ package com.example.fm.projectmad;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
@@ -54,6 +55,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         loginB = (AppCompatButton) findViewById(R.id.loginB);
         registerB = (AppCompatButton) findViewById(R.id.registerB);
+        registerB.setPaintFlags(registerB.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         //Adding click listener
         loginB.setOnClickListener(this);
