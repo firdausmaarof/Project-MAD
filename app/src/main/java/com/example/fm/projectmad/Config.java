@@ -4,11 +4,11 @@ package com.example.fm.projectmad;
  * Created by FM on 13/12/2015.
  */
 public class Config {
-    public static final String URL_ADD="http://madserver.comlu.com/project/add.php";
-    public static final String URL_GET_ALL = "http://madserver.comlu.com/project/getAll.php";
-    public static final String URL_GET_EMP = "http://madserver.comlu.com/project/get.php?id=";
-    public static final String URL_UPDATE_EMP = "http://madserver.comlu.com/project/update.php";
-    public static final String URL_DELETE_EMP = "http://madserver.comlu.com/project/delete.php?id=";
+    public static final String URL_ADD="http://103.253.147.234/task/add.php";
+    public static final String URL_GET_ALL = "http://103.253.147.234/task/getAll.php";
+    public static final String URL_GET_EMP = "http://103.253.147.234/task/get.php?id=";
+    public static final String URL_UPDATE_EMP = "http://103.253.147.234/task/update.php";
+    public static final String URL_DELETE_EMP = "http://103.253.147.234/task/delete.php?id=";
 
     public static final String KEY_TODO_ID = "id";
     public static final String KEY_TODO_TASK = "task";
@@ -20,7 +20,7 @@ public class Config {
     public static final String TAG_DESCRIPTION = "description";
 
     //URL to our login.php file
-    public static final String LOGIN_URL = "http://madserver.comlu.com/project/login/login.php";
+    public static final String LOGIN_URL = "http://103.253.147.234/login.php";
 
     //Keys for email and password as defined in our $_POST['key'] in login.php
     public static final String KEY_EMAIL = "email";
