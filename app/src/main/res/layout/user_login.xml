@@ -73,9 +73,7 @@
         android:id="@+id/loginB"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/button"
-        android:backgroundTintMode="@color/tintMode"
-        android:textColor="#eceaea"
+        style="@style/MainButton"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
         android:padding="12dp"
@@ -98,14 +96,12 @@
             android:id="@+id/registerB"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textColor="#46241d"
-            android:background="#f9f9f9"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/tintMode"
             android:text="@string/register"
+            style="@style/LinkButton"
             android:paddingLeft="5dp"
-            android:singleLine="true"
-            android:textColorHint="#010101"
-            android:foreground="#ffffff"
-            android:textColorHighlight="#010101" />
+            android:singleLine="true"/>
 
     </LinearLayout>
 

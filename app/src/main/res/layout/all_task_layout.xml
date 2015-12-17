@@ -9,12 +9,14 @@
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
         android:textColor="#251b1b"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:paddingTop="3dp"/>
 
     <TextView android:id="@+id/descriptionTV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="5dp"
         android:textColor="#000"
-        android:textSize="13dp"/>
+        android:textSize="13dp"
+        android:paddingBottom="3dp"/>
 </LinearLayout>

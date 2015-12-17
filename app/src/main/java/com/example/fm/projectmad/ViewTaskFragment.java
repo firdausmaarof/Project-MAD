@@ -38,7 +38,6 @@ public class ViewTaskFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.view_task_fragment, container, false);
-        idET = (EditText) v.findViewById(R.id.idET);
         taskET = (EditText) v.findViewById(R.id.taskET);
         descriptionET = (EditText) v.findViewById(R.id.descriptionET);
 

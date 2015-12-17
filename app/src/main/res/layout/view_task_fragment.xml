@@ -5,14 +5,8 @@
     android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingBottom="16dp">
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:id="@+id/idET"
-        android:textColor="#000"/>
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp">
 
     <TextView
         android:layout_width="match_parent"
@@ -57,9 +51,7 @@
             android:layout_weight="1"
             android:text="Update Task"
             android:id="@+id/updateB"
-            android:background="@color/button"
-            android:backgroundTint="@color/tintMode"
-            android:textColor="#eceaea"
+            style="@style/MainButton"
             android:layout_marginRight="5dp"/>
 
         <Button
@@ -68,9 +60,7 @@
             android:layout_weight="1"
             android:text="Delete Task"
             android:id="@+id/deleteB"
-            android:background="@color/button"
-            android:backgroundTint="@color/tintMode"
-            android:textColor="#eceaea"
+            style="@style/MainButton"
             android:layout_marginLeft="5dp"/>
 
     </LinearLayout>
