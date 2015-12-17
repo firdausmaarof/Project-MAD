@@ -1,6 +1,7 @@
 package com.example.fm.projectmad;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +22,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private Button registerB;
 
-    private static final String REGISTER_URL = "http://madserver.comlu.com/project/login/register.php";
+    private static final String REGISTER_URL = "http://103.253.147.234/register.php";
 
 
     @Override
@@ -70,6 +71,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 super.onPostExecute(s);
                 loading.dismiss();
                 Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                finish();
+                startActivity(intent);
             }
 
             @Override

@@ -24,8 +24,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:ems="10"
-            android:hint="Username"
-            android:inputType="textPassword"/>
+            android:hint="Username"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -59,7 +58,7 @@
             android:layout_centerVertical="true"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textPassword"/>
+            android:inputType="textEmailAddress"/>
 
     </android.support.design.widget.TextInputLayout>
     <!--<TextView

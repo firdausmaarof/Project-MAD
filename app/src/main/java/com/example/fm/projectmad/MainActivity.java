@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements AllTaskFragment.A
 
                         //Starting login activity
                         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        finish();
                         startActivity(intent);
                     }
                 });
